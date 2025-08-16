@@ -132,6 +132,9 @@ class Bootstrap
                 if (!isset($dbsettings['schema'])) {
                     $dbsettings['schema'] = 'public';
                 }
+                if (isset($dbsettings['sslmode'])) {
+                    $dbsettings['sslmode'] = 'none';
+                }
                 break;
             default:
                 if (!isset($dbsettings['port'])) {
@@ -139,6 +142,9 @@ class Bootstrap
                 }
                 if (!isset($dbsettings['schema'])) {
                     $dbsettings['schema'] = '';
+                }
+                if (isset($dbsettings['sslmode'])) {
+                    $dbsettings['sslmode'] = '';
                 }
         }
         $this->_dbSettings = $dbsettings;
